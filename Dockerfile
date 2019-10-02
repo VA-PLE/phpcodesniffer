@@ -13,19 +13,14 @@ RUN set -e \
   && apk add --no-cache \
   curl \
   git \
-  patch \
   php7 \
-  php7-apcu \
-  php7-ctype \
-  php7-dom \
   php7-json \
   php7-mbstring \
-  php7-opcache \
   php7-openssl \
   php7-phar \
   php7-simplexml \
   php7-tokenizer \
-  php7-xml \
+  php7-iconv \
   php7-xmlwriter \
   && curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin \
   && composer global require drupal/coder --update-no-dev --no-suggest --prefer-dist ^8.3.2 \

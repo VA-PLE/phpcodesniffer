@@ -1,13 +1,6 @@
-FROM alpine:3.10.2
+FROM alpine:3.10.3
 
-ARG BUILD_DATE
-ARG VCS_REF
-
-LABEL org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.schema-version="1.0" \
-  org.label-schema.name="phpcodesniffer" \
-  org.label-schema.description="PHP codesniffer for Drupal - phpcs & phpcbf"
+MAINTAINER Vasyl Plesiuk <v.plesuk@dev-company.com>
 
 RUN set -e \
   && apk add --no-cache \

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t vaple/phpcodesniffer:19.10.5 .
+docker build -t vaple/phpcodesniffer:20.01.1 .

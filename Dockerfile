@@ -1,4 +1,4 @@
-FROM alpine:3.11.2
+FROM alpine:3.11.3
 
 MAINTAINER Vasyl Plesiuk <v.plesuk@dev-company.com>
 
@@ -21,7 +21,7 @@ RUN set -e \
   && ln -s /root/.composer/vendor/bin/phpcbf /usr/bin/phpcbf \
   && ln -s /root/.composer/vendor/drupal/coder/coder_sniffer/Drupal /root/.composer/vendor/squizlabs/php_codesniffer/src/Standards/Drupal \
   && ln -s /root/.composer/vendor/drupal/coder/coder_sniffer/DrupalPractice /root/.composer/vendor/squizlabs/php_codesniffer/src/Standards/DrupalPractice \
-  && apk del --no-cache git \
+  && apk del --no-cache git curl \
   && rm -rf /root/.composer/cache/* \
   && sed -i "s/.*memory_limit = .*/memory_limit = -1/" /etc/php7/php.ini
 

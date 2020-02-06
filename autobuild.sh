@@ -32,7 +32,7 @@ echo "\n\nAre you sure? (y/n)"
 read item3
 case $item3 in
   y|Y )
-    docker push;;
+    docker push ${IMAGENAME}:`date +%y.%m`;;
   n|N )
     exit;;
 esac

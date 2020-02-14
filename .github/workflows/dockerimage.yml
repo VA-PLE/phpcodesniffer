@@ -22,10 +22,10 @@ jobs:
         
       - name: Push to docker hub
         if: success()
-#        uses: actions-hub/docker@master
-        run: docker push vaple/phpcodesniffer:latest
-#        with:
-#          args: push docker.pkg.github.com/${{ github.repository }}:latest
+        uses: actions-hub/docker@master
+#        run: docker push vaple/phpcodesniffer:latest
+        with:
+          args: push docker.pkg.github.com/vaple/phpcodesniffer:latest
 
 #jobs:
 #

@@ -25,7 +25,7 @@ jobs:
         uses: actions-hub/docker@master
 #        run: docker push vaple/phpcodesniffer:latest
         with:
-          args: push docker.pkg.github.com/vaple/phpcodesniffer:latest
+          args: push vaple/phpcodesniffer:latest
 
 #jobs:
 #

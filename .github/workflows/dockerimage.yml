@@ -26,4 +26,4 @@ jobs:
         uses: actions-hub/docker@master
         with:
           args: push vaple/phpcodesniffer:latest
-          args: push vaple/phpcodesniffer:`date +%y.%m`
+            - push vaple/phpcodesniffer:`date +%y.%m`

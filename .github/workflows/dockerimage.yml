@@ -17,7 +17,7 @@ jobs:
 
       - name: Build :lastest
         if: success()
-        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:$latest ##(date +%y.%m)
+        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:latest ##(date +%y.%m)
 #        run: docker build -t docker.pkg.github.com/${{ github.repository }}/app:latest .
         
 #      - name: Push to docker hub :latest

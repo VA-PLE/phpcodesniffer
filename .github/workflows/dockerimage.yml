@@ -21,9 +21,14 @@ jobs:
         if: success()
         run: docker build -t vaple/phpcodesniffer:latest -t vaple/phpcodesniffer:`date +%y.%m` .
         
-      - name: Push to docker hub
+      - name: Push to docker hub :latest
         if: success()
         uses: actions-hub/docker@master
         with:
           args: push vaple/phpcodesniffer:latest
-            - push vaple/phpcodesniffer:`date +%y.%m`
+
+      - name: Push to docker hub :`date +%y.%m`
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push vaple/phpcodesniffer:`date +%y.%m`

@@ -25,4 +25,5 @@ jobs:
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push vaple/phpcodesniffer:latest; push vaple/phpcodesniffer:`date +%y.%m`
+          args: push vaple/phpcodesniffer:latest
+          args: push vaple/phpcodesniffer:`date +%y.%m`

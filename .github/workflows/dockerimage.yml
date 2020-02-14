@@ -1,6 +1,9 @@
 name: Docker Image CI
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron:  '0 10 1 * *'
 
 jobs:
   github:
@@ -13,27 +16,13 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-#          DOCKER_REGISTRY_URL: docker.pkg.github.com
 
       - name: Build image
         if: success()
         run: docker build -t vaple/phpcodesniffer:latest -t vaple/phpcodesniffer:`date +%y.%m` .
-#        run: docker build -t docker.pkg.github.com/${{ github.repository }}/app:latest .
         
       - name: Push to docker hub
         if: success()
         uses: actions-hub/docker@master
-#        run: docker push vaple/phpcodesniffer:latest
         with:
-          args: push vaple/phpcodesniffer:latest
-
-#jobs:
-#
-#  build:
-#
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#    - uses: actions/checkout@v2
-#    - name: Build the Docker image
-#      run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:$(date +%y.%m)
+          args: push vaple/phpcodesniffer:latest vaple/phpcodesniffer:`date +%y.%m`

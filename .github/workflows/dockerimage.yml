@@ -15,16 +15,16 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 #          DOCKER_REGISTRY_URL: docker.pkg.github.com
 
-      - name: Build :lastest
+      - name: Build image
         if: success()
-        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:latest ##(date +%y.%m)
+        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:latest --tag vaple/phpcodesniffer:(date +%y.%m)
 #        run: docker build -t docker.pkg.github.com/${{ github.repository }}/app:latest .
         
-#      - name: Push to docker hub :latest
-#        if: success()
-#        uses: actions-hub/docker@master
-#        with:
-#          args: push docker.pkg.github.com/${{ github.repository }}:latest
+      - name: Push to docker hub
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push docker.pkg.github.com/${{ github.repository }}:latest
 
 #jobs:
 #

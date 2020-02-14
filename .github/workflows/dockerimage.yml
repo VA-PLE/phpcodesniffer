@@ -15,9 +15,9 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 #          DOCKER_REGISTRY_URL: docker.pkg.github.com
 
-      - name: Build :lastest
-        if: success()
-        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:$(date +%y.%m)
+##      - name: Build :lastest
+##        if: success()
+##        run: docker build . --file Dockerfile --tag vaple/phpcodesniffer:$(date +%y.%m)
 #        run: docker build -t docker.pkg.github.com/${{ github.repository }}/app:latest .
         
 #      - name: Push to docker hub :latest

@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image Build CI
 
 on:
   push:
@@ -17,11 +17,10 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          REPO: vaple/phpcodesniffer
 
       - name: Build image
         if: success()
-        run: docker build -t ${ REPO }:latest -t vaple/phpcodesniffer:`date +%y.%m` .
+        run: docker build -t vaple/phpcodesniffer:latest -t vaple/phpcodesniffer:`date +%y.%m` .
         
       - name: Push to docker hub :latest
         if: success()
@@ -34,7 +33,8 @@ jobs:
         uses: actions-hub/docker@master
         with:
           args: push vaple/phpcodesniffer:`date +%y.%m`
-        
+
+      - name: Telegram notification
       - uses: yanzay/notify-telegram@v0.1.0
         if: always()
         with:

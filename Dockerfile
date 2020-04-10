@@ -1,6 +1,6 @@
-FROM alpine:3.11.3
+FROM alpine:latest
 
-MAINTAINER Vasyl Plesiuk <v.plesuk@dev-company.com>
+MAINTAINER Vasyl Plesiuk <vasyl.p@team.anyforsoft.com>
 
 RUN set -e \
   && apk add --no-cache \

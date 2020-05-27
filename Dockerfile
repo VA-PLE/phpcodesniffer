@@ -1,4 +1,4 @@
-FROM alpine:3.11.5
+FROM alpine:3.11.6
 
 MAINTAINER Vasyl Plesiuk <vasyl.p@team.anyforsoft.com>
 

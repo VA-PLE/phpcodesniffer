@@ -23,6 +23,7 @@ RUN set -e \
   && ln -s /root/.composer/vendor/drupal/coder/coder_sniffer/DrupalPractice /root/.composer/vendor/squizlabs/php_codesniffer/src/Standards/DrupalPractice \
   && apk del --no-cache git curl \
   && rm -rf /root/.composer/cache/* \
+  && rm -rf $(find / -name '*git*') \
   && sed -i "s/.*memory_limit = .*/memory_limit = -1/" /etc/php7/php.ini
 
 VOLUME /work

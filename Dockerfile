@@ -15,7 +15,7 @@ RUN set -e \
   php7-tokenizer \
   php7-xmlwriter \
   && curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin \
-  && composer global require drupal/coder --update-no-dev --no-suggest --prefer-dist ^8.3.2 \
+  && composer global require drupal/coder --update-no-dev --prefer-dist ^8.3.2 \
   && ln -s /root/.composer/vendor/bin/phpcs /usr/bin/phpcs \
   && ln -s /root/.composer/vendor/bin/phpcbf /usr/bin/phpcbf \
   && ln -s /root/.composer/vendor/drupal/coder/coder_sniffer/Drupal /root/.composer/vendor/squizlabs/php_codesniffer/src/Standards/Drupal \

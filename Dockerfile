@@ -13,7 +13,6 @@ RUN set -e \
   php7-phar \
   php7-simplexml \
   php7-tokenizer \
-  php7-iconv \
   php7-xmlwriter \
   && curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin \
   && composer global require drupal/coder --update-no-dev --no-suggest --prefer-dist ^8.3.2 \

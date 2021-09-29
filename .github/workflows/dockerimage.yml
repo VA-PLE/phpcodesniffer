@@ -1,8 +1,9 @@
 name: Docker Image Build CI
 
 on:
-  schedule:
-    - cron:  '0 10 1 * *'
+#  schedule:
+#    - cron:  '0 10 1 * *'
+  push
 
 jobs:
   build_image:
